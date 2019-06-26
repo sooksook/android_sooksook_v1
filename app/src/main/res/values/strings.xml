@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">쑥쑥</string>
+
+    <string name="back_pressed_message">한번 더 누르면 종료됩니다.</string>
+    <string name="main_title">쑥쑥이에서 반려식물 기르는 법을 찾아보세요.</string>
+    <string name="plant_title">반려식물 둘러보기</string>
+    <string name="search_hint">반려식물을 검색 해 보세요</string>
+    <string name="contact">문의하기</string>
+    <string name="recently_search_text">최근 검색어</string>
+</resources>
