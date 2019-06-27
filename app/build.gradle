@@ -2,6 +2,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
 
 def getGitRevision() {
     def branch = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
@@ -86,8 +91,18 @@ dependencies {
     implementation('com.google.apis:google-api-services-sheets:v4-rev516-1.23.0') {
         exclude group : 'org.apache.httpcomponents'
     }
+
+    // firebase
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+    // fabric
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
+        transitive = true
+    }
 }
 
 androidExtensions {
     experimental = true
 }
+
+apply plugin: 'com.google.gms.google-services'

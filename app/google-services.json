@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028823945360",
+    "firebase_url": "https://sooksook-55cf2.firebaseio.com",
+    "project_id": "sooksook-55cf2",
+    "storage_bucket": "sooksook-55cf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028823945360:android:20cafe74965cfa1f",
+        "android_client_info": {
+          "package_name": "kr.gdg.plant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028823945360-m19q2oso64o4ftn5easoullfpio61kqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn0MzLtLS7J21ws05tMVbOj1MfGQcsQNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028823945360-m19q2oso64o4ftn5easoullfpio61kqo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.util.Base64
+import com.crashlytics.android.Crashlytics
+import io.fabric.sdk.android.Fabric
 import kr.gdg.plant.common.Dlog
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -26,6 +28,8 @@ class GlobalApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         Dlog.i("onCreate")
+
+        Fabric.with(this, Crashlytics())
 
         instance = this
         DEBUG = isDebuggable(this)
