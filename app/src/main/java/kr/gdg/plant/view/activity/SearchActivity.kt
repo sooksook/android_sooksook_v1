@@ -7,6 +7,8 @@ import kr.gdg.plant.base.BaseActivity
 import android.content.Context
 import android.content.Intent
 import android.view.inputmethod.InputMethodManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kr.gdg.plant.BR
 import kr.gdg.plant.R
 import kr.gdg.plant.base.BaseRecyclerView
@@ -75,9 +77,9 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
         getBinding().includeKindOfPlant.plantRv.run {
             this.adapter = adapter
-            this.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this@SearchActivity, 2)
-            addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
+            this.layoutManager = LinearLayoutManager(this@SearchActivity)
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
                     if (dy != 0)
                         imm.hideSoftInputFromWindow(getBinding().searchEt.windowToken, 0)
@@ -103,7 +105,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
         getBinding().searchRvResultText.run {
             this.adapter = adapter
-            this.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this@SearchActivity)
+            this.layoutManager = LinearLayoutManager(this@SearchActivity)
         }
     }
 
@@ -145,10 +147,10 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
             getBinding().includeKindOfPlant.plantRv.run {
                 this.adapter = adapter
-                this.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this@SearchActivity, 2)
+                this.layoutManager = LinearLayoutManager(this@SearchActivity)
 
-                addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
-                    override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
+                addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                         super.onScrolled(recyclerView, dx, dy)
                         if (dy != 0)
                             imm.hideSoftInputFromWindow(getBinding().searchEt.windowToken, 0)

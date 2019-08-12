@@ -1,6 +1,7 @@
 package kr.gdg.plant.view.activity
 
 import android.content.Intent
+import androidx.recyclerview.widget.LinearLayoutManager
 import kr.gdg.plant.BR
 import kr.gdg.plant.R
 import kr.gdg.plant.base.BaseActivity
@@ -55,7 +56,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         getBinding().includeKindOfPlant.plantRv.run {
             this.adapter = adapter
-            this.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this@MainActivity, 2)
+            this.layoutManager = LinearLayoutManager(this@MainActivity)
         }
     }
 

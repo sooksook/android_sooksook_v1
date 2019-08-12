@@ -18,8 +18,7 @@
             android:id="@+id/search_sv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:background="@color/color_00D788">
+            android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
