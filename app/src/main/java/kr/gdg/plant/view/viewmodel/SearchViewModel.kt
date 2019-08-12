@@ -22,7 +22,7 @@ class SearchViewModel: BaseViewModel() {
 //    val isValid = ObservableBoolean()
 
     override fun onCreate() {
-        searchImage1.set(R.drawable.custom_search_box)
+        searchImage1.set(R.drawable.custom_search_box2)
         searchImage2.set(R.drawable.top_search)
         searchImage3.set(R.drawable.img_ss_main)
 

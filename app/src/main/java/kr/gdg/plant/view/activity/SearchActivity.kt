@@ -117,7 +117,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
             getBinding().searchCvResultDataNo.visibility = View.VISIBLE
             getBinding().includeKindOfPlant.plantCv.visibility = View.GONE
 
-            val data = ("<a><font color='#4a4a4a'><b>\"$name\"</b></font></a>가 없다면\n문의하기를 눌러주세요").toSpanned()
+//            val data = ("<a><font color='#4a4a4a'><b>\"$name\"</b></font></a>가 없다면\n문의하기를 눌러주세요").toSpanned()
+            val data = "찾는 식물이 없다면 쑥쑥이에게 요청해주세요."
             getBinding().searchTvTitle.text = data
             getBinding().searchBtContact.setOnClickListener {
                 startActivity(Intent(Intent.ACTION_SEND).apply {
