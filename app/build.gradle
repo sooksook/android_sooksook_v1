@@ -26,7 +26,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "kr.gdg.plant"
+        applicationId "kr.gdg.sooksook"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode getGitRevision()

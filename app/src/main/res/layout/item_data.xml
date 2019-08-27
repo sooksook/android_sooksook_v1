@@ -7,7 +7,7 @@
     <data>
         <variable
                 name="dataItem"
-                type="kr.gdg.plant.data.item.DataItem"/>
+                type="kr.gdg.sooksook.data.item.DataItem"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

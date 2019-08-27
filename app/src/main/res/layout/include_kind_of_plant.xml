@@ -5,9 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <!--<variable-->
-                <!--name="model"-->
-                <!--type="kr.gdg.plant.view.viewmodel.MainViewModel"/>-->
+
     </data>
 
     <androidx.cardview.widget.CardView

@@ -7,7 +7,7 @@
     <data>
         <variable
                 name="activity"
-                type="kr.gdg.plant.view.custom.UtilDialog"/>
+                type="kr.gdg.sooksook.view.custom.UtilDialog"/>
     </data>
 
     <LinearLayout

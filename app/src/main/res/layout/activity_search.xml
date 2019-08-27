@@ -7,11 +7,11 @@
     <data>
         <variable
                 name="activity"
-                type="kr.gdg.plant.view.activity.SearchActivity"/>
+                type="kr.gdg.sooksook.view.activity.SearchActivity"/>
 
         <variable
                 name="model"
-                type="kr.gdg.plant.view.viewmodel.SearchViewModel"/>
+                type="kr.gdg.sooksook.view.viewmodel.SearchViewModel"/>
     </data>
 
     <ScrollView

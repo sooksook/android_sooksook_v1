@@ -8,7 +8,7 @@
 
         <variable
                 name="model"
-                type="kr.gdg.plant.view.viewmodel.MainViewModel"/>
+                type="kr.gdg.sooksook.view.viewmodel.MainViewModel"/>
     </data>
 
     <ScrollView

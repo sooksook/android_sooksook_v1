@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="activity" type="kr.gdg.plant.view.activity.WebViewActivity"/>
+        <variable name="activity" type="kr.gdg.sooksook.view.activity.WebViewActivity"/>
     </data>
 
     <LinearLayout
