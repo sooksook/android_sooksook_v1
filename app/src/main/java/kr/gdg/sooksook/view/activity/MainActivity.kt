@@ -26,10 +26,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val getContentView: Int
         get() = R.layout.activity_main
 
-    companion object {
-        val mFirebaseAnalytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(MainActivity())
-    }
-
     override fun initView() {
         val actionBar = supportActionBar
         actionBar?.hide()
@@ -43,7 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onClick()
 
         getBinding().mainIvBox.setOnClickListener {
-            "home_searchBar".setFirebaseEvent()
+            setFirebaseEvent("home_searchBar")
             startActivity(Intent(this, SearchActivity::class.java))
         }
     }
@@ -58,7 +54,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             replaceAll(getMainItems())
             setCallback(object : BaseRecyclerView.Adapter.ACallback {
                 override fun onClick(position: Int) {
-                    "home_browsing_plant".setFirebaseEvent(getMainItems()[position].name)
+                    setFirebaseEvent("home_browsing_plant", getMainItems()[position].name)
 
                     startActivity(Intent(this@MainActivity, WebViewActivity::class.java).apply {
                         putExtra("url", "${Const.webViewUrl}${getMainItems()[position].name}")

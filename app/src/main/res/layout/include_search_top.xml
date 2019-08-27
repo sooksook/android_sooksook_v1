@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="model"
+                type="kr.gdg.sooksook.view.viewmodel.SearchViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+        <!--android:background="@drawable/custom_search_box"-->
+        <ImageView
+                android:id="@+id/search_iv_box"
+                android:layout_width="294dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.8"
+                app:loadImageDrawable="@{model.searchImage1}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <!--android:background="@drawable/top_search"-->
+        <ImageView
+                android:id="@+id/search_iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:alpha="0.8"
+                app:loadImageDrawable="@{model.searchImage2}"
+                app:layout_constraintTop_toTopOf="@id/search_iv_box"
+                app:layout_constraintLeft_toLeftOf="@id/search_iv_box"
+                app:layout_constraintBottom_toBottomOf="@id/search_iv_box"/>
+
+        <EditText
+                android:id="@+id/search_et"
+                style="@style/custom_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="text"
+                android:letterSpacing="-0.03"
+                android:lineSpacingExtra="12sp"
+                android:hint="@string/search_hint"
+                android:textColorHint="@color/color_B3B3B3"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toTopOf="@id/search_iv_box"
+                app:layout_constraintLeft_toLeftOf="@id/search_iv_box"
+                app:layout_constraintRight_toRightOf="@id/search_iv_box"
+                app:layout_constraintBottom_toBottomOf="@id/search_iv_box"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

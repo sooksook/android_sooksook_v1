@@ -2,9 +2,11 @@ package kr.gdg.sooksook.util.extensions
 
 import android.content.Context
 import android.content.DialogInterface
+import android.os.Bundle
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import android.widget.Toast
+import com.google.firebase.analytics.FirebaseAnalytics
 
 // region toast message
 fun Context.showToast(message: String) { Toast.makeText(this, message, Toast.LENGTH_SHORT).show() }
@@ -64,3 +66,18 @@ fun Context.confirmDialogCustom(message: String, okText: String, noText: String,
         .create().show()
 }
 // endregion
+
+fun Context.setFirebaseEvent(event: String, params: String? = null) {
+    val bundleTagging = Bundle().apply {
+        params?.let {
+            putString(FirebaseAnalytics.Param.ITEM_ID, "id-$it")
+            putString(FirebaseAnalytics.Param.ITEM_NAME, it)
+            putString(FirebaseAnalytics.Param.CONTENT_TYPE, "device")
+        } ?: run {
+
+        }
+    }
+
+    val mFirebaseAnalytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(this)
+    mFirebaseAnalytics.logEvent(event, bundleTagging)
+}

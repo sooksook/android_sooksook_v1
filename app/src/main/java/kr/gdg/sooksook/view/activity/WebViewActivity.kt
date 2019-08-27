@@ -20,16 +20,16 @@ class WebViewActivity : BaseActivity<ActivityWebviewBinding>() {
 
         url = intent.getStringExtra("url")
 
-        getBinding().webView.run {
+        getBinding().webView.apply {
             webViewClient = WebViewClient()
             clearCache(true)
             clearHistory()
             settings.javaScriptEnabled = true
             settings.javaScriptCanOpenWindowsAutomatically = true
             settings.domStorageEnabled = true
-            loadUrl(url)
         }
 
+        getBinding().webView.loadUrl(url)
         getBinding().webViewIvSend.setOnClickListener { onClickActionSend() }
     }
 

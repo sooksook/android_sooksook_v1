@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <!-- custom text view font regular -->
     <style name="custom_text_view_regular" parent="@android:style/Widget.TextView">
         <item name="android:layout_width">wrap_content</item>
