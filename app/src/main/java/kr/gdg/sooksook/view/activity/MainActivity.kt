@@ -1,7 +1,10 @@
 package kr.gdg.sooksook.view.activity
 
 import android.content.Intent
+import android.os.Build
+import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.analytics.FirebaseAnalytics
 import kr.gdg.sooksook.BR
 import kr.gdg.sooksook.R
 import kr.gdg.sooksook.base.BaseActivity
@@ -13,6 +16,7 @@ import kr.gdg.sooksook.databinding.ActivityMainBinding
 import kr.gdg.sooksook.databinding.ItemMainBinding
 import kr.gdg.sooksook.data.item.MainItem
 import kr.gdg.sooksook.data.item.getMainItems
+import kr.gdg.sooksook.util.extensions.setFirebaseEvent
 import kr.gdg.sooksook.view.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -21,6 +25,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override val getContentView: Int
         get() = R.layout.activity_main
+
+    companion object {
+        val mFirebaseAnalytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(MainActivity())
+    }
 
     override fun initView() {
         val actionBar = supportActionBar
@@ -34,7 +42,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun onClick() {
         super.onClick()
 
-        getBinding().mainIvBox.setOnClickListener { startActivity(Intent(this, SearchActivity::class.java)) }
+        getBinding().mainIvBox.setOnClickListener {
+            "home_searchBar".setFirebaseEvent()
+            startActivity(Intent(this, SearchActivity::class.java))
+        }
     }
 
     private fun setRecyclerView() {
@@ -47,6 +58,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             replaceAll(getMainItems())
             setCallback(object : BaseRecyclerView.Adapter.ACallback {
                 override fun onClick(position: Int) {
+                    "home_browsing_plant".setFirebaseEvent(getMainItems()[position].name)
+
                     startActivity(Intent(this@MainActivity, WebViewActivity::class.java).apply {
                         putExtra("url", "${Const.webViewUrl}${getMainItems()[position].name}")
                     })

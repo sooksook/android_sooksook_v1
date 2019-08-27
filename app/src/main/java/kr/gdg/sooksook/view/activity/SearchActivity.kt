@@ -18,6 +18,7 @@ import kr.gdg.sooksook.data.item.*
 import kr.gdg.sooksook.databinding.ActivitySearchBinding
 import kr.gdg.sooksook.databinding.ItemDataBinding
 import kr.gdg.sooksook.databinding.ItemSearchResultBinding
+import kr.gdg.sooksook.util.extensions.setFirebaseEvent
 import kr.gdg.sooksook.view.viewmodel.SearchViewModel
 
 class SearchActivity : BaseActivity<ActivitySearchBinding>() {
@@ -67,6 +68,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
             replaceAll(getDataItems(""))
             setCallback(object : BaseRecyclerView.Adapter.ACallback {
                 override fun onClick(position: Int) {
+                    "search_plant_choose".setFirebaseEvent(getMainItems()[position].name)
+
                     startActivity(Intent(this@SearchActivity, WebViewActivity::class.java).apply {
                         putExtra("url", "${Const.webViewUrl}${getDataItems()[position].name}")
                     })
