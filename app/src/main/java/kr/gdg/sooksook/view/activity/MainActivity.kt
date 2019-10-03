@@ -17,6 +17,7 @@ import kr.gdg.sooksook.databinding.ItemMainBinding
 import kr.gdg.sooksook.data.item.MainItem
 import kr.gdg.sooksook.data.item.getMainItems
 import kr.gdg.sooksook.util.extensions.setFirebaseEvent
+import kr.gdg.sooksook.util.extensions.showToast
 import kr.gdg.sooksook.view.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -35,13 +36,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         setRecyclerView()
     }
 
-    override fun onClick() {
-        super.onClick()
+    fun onClickBox() {
+        setFirebaseEvent("home_searchBar")
+        startActivity(Intent(this, SearchActivity::class.java))
+    }
 
-        getBinding().mainIvBox.setOnClickListener {
-            setFirebaseEvent("home_searchBar")
-            startActivity(Intent(this, SearchActivity::class.java))
-        }
+    fun onClickInfo() {
+        showToast("내 정보?")
     }
 
     private fun setRecyclerView() {
