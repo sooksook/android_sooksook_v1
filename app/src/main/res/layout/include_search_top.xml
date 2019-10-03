@@ -11,14 +11,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="16dp">
+            android:paddingTop="@dimen/dp16_w360"
+            android:paddingBottom="@dimen/dp14_w360">
 
         <!--android:background="@drawable/custom_search_box"-->
         <ImageView
                 android:id="@+id/search_iv_box"
-                android:layout_width="294dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp52_w360"
+                android:layout_marginStart="@dimen/dp32_w360"
+                android:layout_marginEnd="@dimen/dp32_w360"
                 android:alpha="0.8"
                 app:loadImageDrawable="@{model.searchImage1}"
                 app:layout_constraintTop_toTopOf="parent"
@@ -28,9 +30,9 @@
         <!--android:background="@drawable/top_search"-->
         <ImageView
                 android:id="@+id/search_iv_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_width="@dimen/dp24_w360"
+                android:layout_height="@dimen/dp24_w360"
+                android:layout_marginStart="@dimen/dp24_w360"
                 android:alpha="0.8"
                 app:loadImageDrawable="@{model.searchImage2}"
                 app:layout_constraintTop_toTopOf="@id/search_iv_box"
@@ -41,12 +43,11 @@
                 android:id="@+id/search_et"
                 style="@style/custom_edit_text"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="56dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/dp56_w360"
+                android:layout_marginEnd="@dimen/dp20_w360"
                 android:inputType="text"
                 android:letterSpacing="-0.03"
-                android:lineSpacingExtra="12sp"
+                android:lineSpacingExtra="@dimen/textSize12"
                 android:hint="@string/search_hint"
                 android:textColorHint="@color/color_B3B3B3"
                 android:textColor="@android:color/black"

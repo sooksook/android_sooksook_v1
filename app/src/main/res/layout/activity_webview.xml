@@ -12,27 +12,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <include
+                android:id="@+id/include_toolbar"
+                layout="@layout/include_toolbar"/>
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="end">
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <ImageView
-                        android:id="@+id/webView_iv_send"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:src="@drawable/bar_share"/>
+<!--            <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:gravity="end">-->
 
-            </LinearLayout>
+<!--                <ImageView-->
+<!--                        android:id="@+id/webView_iv_send"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="20dp"-->
+<!--                        android:src="@drawable/bar_share"/>-->
 
-        </androidx.appcompat.widget.Toolbar>
+<!--            </LinearLayout>-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
 
         <WebView
                 android:id="@+id/webView"

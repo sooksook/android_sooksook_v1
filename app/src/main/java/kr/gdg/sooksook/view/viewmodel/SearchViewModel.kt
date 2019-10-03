@@ -17,7 +17,7 @@ class SearchViewModel: BaseViewModel() {
 
     override fun onCreate() {
         searchImage1.set(R.drawable.custom_search_box2)
-        searchImage2.set(R.drawable.top_search)
+        searchImage2.set(R.drawable.back)
         searchImage3.set(R.drawable.img_ss_main)
 
 //        score.set(0)

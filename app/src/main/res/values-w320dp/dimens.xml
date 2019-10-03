@@ -81,8 +81,10 @@
     <dimen name="dp80_w360">71.11111dp</dimen>
     <dimen name="dp83_w360">73.77778dp</dimen>
     <dimen name="dp85_w360">75.55556dp</dimen>
+    <dimen name="dp88_w360">78.22222dp</dimen>
     <dimen name="dp89_w360">79.111115dp</dimen>
     <dimen name="dp90_w360">80.0dp</dimen>
+    <dimen name="dp92_w360">81.77777dp</dimen>
     <dimen name="dp97_w360">86.22222dp</dimen>
     <dimen name="dp100_w360">88.88889dp</dimen>
     <dimen name="dp104_w360">92.44444dp</dimen>
@@ -111,6 +113,7 @@
     <dimen name="dp178_5_w360">158.66667dp</dimen>
     <dimen name="dp179_w360">159.11111dp</dimen>
     <dimen name="dp183_w360">162.66667dp</dimen>
+    <dimen name="dp200_w360">177.77777dp</dimen>
     <dimen name="dp202_w360">179.55556dp</dimen>
     <dimen name="dp211_w360">187.55556dp</dimen>
     <dimen name="dp251_w360">223.11111dp</dimen>

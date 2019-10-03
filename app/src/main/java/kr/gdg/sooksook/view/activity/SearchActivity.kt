@@ -30,6 +30,7 @@ class SearchActivity : BaseActivity<ActivitySearch2Binding>() {
         get() = R.layout.activity_search2
 
     override fun initView() {
+        getBinding().activity = this
         getBinding().includeSearchTop.model = model
         model.onCreate()
 

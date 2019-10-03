@@ -12,23 +12,24 @@ enum class LoginIndex {
 }
 
 class LoginActivity: BaseActivity<ActivityLoginBinding>() {
+
     override val getContentView: Int
         get() = R.layout.activity_login
 
     override fun initView() {
         Dlog.i("initView")
-
+        getBinding().activity = this
     }
 
     fun onClickSns(index: LoginIndex) {
         when(index) {
             LoginIndex.KAKAO -> {
-                showToast("카카오 로그인")
                 startActivity(Intent(this, MainActivity::class.java))
             }
 
             LoginIndex.GOOGLE -> {
                 showToast("구글 로그인")
+                Dlog.i("구글 로그인")
             }
         }
     }

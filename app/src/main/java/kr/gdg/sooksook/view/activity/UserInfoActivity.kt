@@ -16,13 +16,21 @@ class UserInfoActivity: BaseActivity<ActivityUserInfoBinding>() {
 
     override fun initView() {
         Dlog.i("initView")
+        getBinding().activity = this
+    }
+
+    override fun onClick() {
+        super.onClick()
+        getBinding().userInfoTvBookmark.setOnClickListener { onClickMenu(UserInfoIndex.BOOK_MARK) }
+        getBinding().userInfoTvContact.setOnClickListener { onClickMenu(UserInfoIndex.CONTACT) }
+        getBinding().userInfoTvLogout.setOnClickListener { onClickMenu(UserInfoIndex.LOGOUT) }
     }
 
     fun onClickClose() {
         finish()
     }
 
-    fun onClickMenu(index: UserInfoIndex) {
+    private fun onClickMenu(index: UserInfoIndex) {
         when(index) {
             UserInfoIndex.BOOK_MARK -> {
                 showToast("즐겨찾기")

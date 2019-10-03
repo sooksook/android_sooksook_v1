@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--                android:id="@+id/app_bar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:animateLayoutChanges="true">-->
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end">
+
+                    <ImageView
+                            android:id="@+id/include_toolbar_iv"
+                            android:layout_width="@dimen/dp24_w360"
+                            android:layout_height="@dimen/dp24_w360"
+                            android:layout_marginEnd="@dimen/dp16_w360"
+                            tools:src="@drawable/bar_share" />
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+</layout>

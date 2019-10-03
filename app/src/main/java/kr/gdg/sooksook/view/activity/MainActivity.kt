@@ -16,6 +16,8 @@ import kr.gdg.sooksook.databinding.ActivityMainBinding
 import kr.gdg.sooksook.databinding.ItemMainBinding
 import kr.gdg.sooksook.data.item.MainItem
 import kr.gdg.sooksook.data.item.getMainItems
+import kr.gdg.sooksook.util.extensions.actionBarHide
+import kr.gdg.sooksook.util.extensions.getDrawableById
 import kr.gdg.sooksook.util.extensions.setFirebaseEvent
 import kr.gdg.sooksook.util.extensions.showToast
 import kr.gdg.sooksook.view.viewmodel.MainViewModel
@@ -28,21 +30,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         get() = R.layout.activity_main
 
     override fun initView() {
-        val actionBar = supportActionBar
-        actionBar?.hide()
+        actionBarHide()
 
+        getBinding().activity = this
         getBinding().model = model
         model.onCreate()
+
         setRecyclerView()
+        setToolbarUi()
+    }
+
+    private fun setToolbarUi() {
+        getBinding().includeToolbar.includeToolbarIv.setImageDrawable(getDrawableById(R.drawable.bar_close_copy))
+
+        getBinding().includeToolbar.includeToolbarIv.setOnClickListener {
+            startActivity(Intent(this, UserInfoActivity::class.java))
+        }
     }
 
     fun onClickBox() {
         setFirebaseEvent("home_searchBar")
         startActivity(Intent(this, SearchActivity::class.java))
-    }
-
-    fun onClickInfo() {
-        startActivity(Intent(this, UserInfoActivity::class.java))
     }
 
     private fun setRecyclerView() {

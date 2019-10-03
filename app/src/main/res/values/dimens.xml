@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!--기본-->
-    <dimen name="dp88_w360">88.0dp</dimen>
-    <dimen name="dp92_w360">92.0dp</dimen>
+    <dimen name="dp200_w360">200.0dp</dimen>
+
     <dimen name="dp5_minus_w360">-5.0dp</dimen>
     <dimen name="dp4_minus_w360">-4.0dp</dimen>
     <dimen name="dp0_5_w360">0.5dp</dimen>
@@ -83,8 +83,10 @@
     <dimen name="dp80_w360">80.0dp</dimen>
     <dimen name="dp83_w360">83.0dp</dimen>
     <dimen name="dp85_w360">85.0dp</dimen>
+    <dimen name="dp88_w360">88.0dp</dimen>
     <dimen name="dp89_w360">89.0dp</dimen>
     <dimen name="dp90_w360">90.0dp</dimen>
+    <dimen name="dp92_w360">92.0dp</dimen>
     <dimen name="dp97_w360">97.0dp</dimen>
     <dimen name="dp100_w360">100.0dp</dimen>
     <dimen name="dp104_w360">104.0dp</dimen>
@@ -123,6 +125,8 @@
     <dimen name="dp327_w360">327.0dp</dimen>
     <dimen name="dp377_w360">377.0dp</dimen>
 
+    <dimen name="textSize12">12sp</dimen>
     <dimen name="textSize14">14sp</dimen>
+    <dimen name="textSize18">18sp</dimen>
     <dimen name="textSize20">20sp</dimen>
 </resources>

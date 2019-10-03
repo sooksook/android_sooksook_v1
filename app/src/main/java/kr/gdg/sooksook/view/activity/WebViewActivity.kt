@@ -9,6 +9,7 @@ import android.content.Intent
 import android.view.MenuItem
 import kr.gdg.sooksook.R
 import kr.gdg.sooksook.common.Dlog
+import kr.gdg.sooksook.util.extensions.getDrawableById
 import kr.gdg.sooksook.util.extensions.setActionBarHome
 
 class WebViewActivity : BaseActivity<ActivityWebviewBinding>() {
@@ -20,23 +21,29 @@ class WebViewActivity : BaseActivity<ActivityWebviewBinding>() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun initView() {
         Dlog.i("initView")
-
-        setActionBarHome(getBinding().toolbar, R.drawable.bar_grey)
-
+        getBinding().activity = this
+        setActionBarHome(getBinding().includeToolbar.toolbar, R.drawable.bar_grey)
         url = intent.getStringExtra("url")
 
-        getBinding().webView.run {
+        setWebView()
+        setToolbarUi()
+    }
+
+    private fun setWebView() {
+        getBinding().webView.apply {
             webViewClient = WebViewClient()
             clearCache(true)
             clearHistory()
             settings.javaScriptEnabled = true
             settings.javaScriptCanOpenWindowsAutomatically = true
             settings.domStorageEnabled = true
-            loadUrl(url)
         }
+        getBinding().webView.loadUrl(url)
+    }
 
-//        getBinding().webView.loadUrl(url)
-        getBinding().webViewIvSend.setOnClickListener {
+    private fun setToolbarUi() {
+        getBinding().includeToolbar.includeToolbarIv.setImageDrawable(getDrawableById(R.drawable.bar_share))
+        getBinding().includeToolbar.includeToolbarIv.setOnClickListener {
             startActivity(Intent.createChooser(Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, url)
