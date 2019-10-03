@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="kr.gdg.sooksook.view.activity.LoginIndex"/>
+
+        <variable
+                name="activity"
+                type="kr.gdg.sooksook.view.activity.LoginActivity"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.activity.SplashActivity">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_splash_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+                android:id="@+id/login_bt_kakao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="kakao"
+                android:onClick="@{() -> activity.onClickSns(LoginIndex.KAKAO)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/login_bt_google"/>
+
+        <Button
+                android:id="@+id/login_bt_google"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="google"
+                android:onClick="@{() -> activity.onClickSns(LoginIndex.GOOGLE)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

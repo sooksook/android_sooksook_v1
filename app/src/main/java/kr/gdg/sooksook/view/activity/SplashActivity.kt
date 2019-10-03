@@ -20,7 +20,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>() {
                 Dlog.i("isGetData = $isGetData")
                 if(isGetData) {
                     Handler().postDelayed({
-                        startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                        startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
                         finish()
                     }, 1000)
                 }
