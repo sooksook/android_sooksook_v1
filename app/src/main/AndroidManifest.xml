@@ -32,6 +32,10 @@
                 android:screenOrientation="portrait" />
 
         <activity
+                android:name=".view.activity.UserInfoActivity"
+                android:screenOrientation="portrait" />
+
+        <activity
                 android:name="kr.gdg.sooksook.view.activity.SearchActivity"
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="adjustNothing" />

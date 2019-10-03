@@ -42,7 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun onClickInfo() {
-        showToast("내 정보?")
+        startActivity(Intent(this, UserInfoActivity::class.java))
     }
 
     private fun setRecyclerView() {

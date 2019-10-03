@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="kr.gdg.sooksook.view.activity.UserInfoIndex"/>
+
+        <variable
+                name="activity"
+                type="kr.gdg.sooksook.view.activity.UserInfoActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/user_info_iv_close"
+                android:layout_width="@dimen/dp24_w360"
+                android:layout_height="@dimen/dp24_w360"
+                android:layout_marginTop="@dimen/dp16_w360"
+                android:layout_marginEnd="@dimen/dp16_w360"
+                android:src="@drawable/close"
+                android:onClick="@{() -> activity.onClickClose()}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <!--region 유저 정보-->
+        <ImageView
+                android:id="@+id/user_info_iv"
+                android:layout_width="@dimen/dp97_w360"
+                android:layout_height="@dimen/dp97_w360"
+                android:layout_marginTop="@dimen/dp92_w360"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+                android:id="@+id/user_info_tv_name"
+                style="@style/custom_text_view_bold"
+                android:layout_marginTop="@dimen/dp24_w360"
+                android:letterSpacing="-0.04"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_info_iv"
+                tools:text="@string/app_name" />
+
+        <TextView
+                android:id="@+id/user_info_tv_email"
+                style="@style/custom_text_view_regular"
+                android:layout_marginTop="@dimen/dp8_w360"
+                android:letterSpacing="-0.04"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_info_tv_name"
+                tools:text="@string/app_name" />
+        <!--endregion-->
+
+        <!--region 즐겨찾기-->
+        <ImageView
+                android:id="@+id/user_info_iv_bookmark"
+                android:layout_width="@dimen/dp24_w360"
+                android:layout_height="@dimen/dp24_w360"
+                android:layout_marginStart="@dimen/dp42_w360"
+                android:layout_marginBottom="@dimen/dp32_w360"
+                android:src="@drawable/top_bookmark_pres_sm"
+                app:layout_constraintBottom_toTopOf="@id/user_info_iv_contact"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+                android:id="@+id/user_info_tv_bookmark"
+                style="@style/custom_text_view_medium"
+                android:layout_width="0dp"
+                android:paddingStart="@dimen/dp76_w360"
+                android:text="@string/UserInfo000"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize14"
+                android:onClick="@{() -> activity.onClickMenu(UserInfoIndex.BOOK_MARK)"
+                app:layout_constraintBottom_toBottomOf="@id/user_info_iv_bookmark"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/user_info_iv_bookmark" />
+        <!--endregion-->
+
+        <!--region 문의하기-->
+        <ImageView
+                android:id="@+id/user_info_iv_contact"
+                android:layout_width="@dimen/dp24_w360"
+                android:layout_height="@dimen/dp24_w360"
+                android:layout_marginStart="@dimen/dp42_w360"
+                android:layout_marginBottom="@dimen/dp32_w360"
+                android:src="@drawable/contact"
+                app:layout_constraintBottom_toTopOf="@id/user_info_iv_app_info"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+                android:id="@+id/user_info_tv_contact"
+                style="@style/custom_text_view_medium"
+                android:layout_width="0dp"
+                android:paddingStart="@dimen/dp76_w360"
+                android:text="@string/UserInfo001"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize14"
+                android:onClick="@{() -> activity.onClickMenu(UserInfoIndex.CONTACT)"
+                app:layout_constraintBottom_toBottomOf="@id/user_info_iv_contact"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/user_info_iv_contact" />
+        <!--endregion-->
+
+        <!--region 앱정보-->
+        <ImageView
+                android:id="@+id/user_info_iv_app_info"
+                android:layout_width="@dimen/dp24_w360"
+                android:layout_height="@dimen/dp24_w360"
+                android:layout_marginStart="@dimen/dp42_w360"
+                android:layout_marginBottom="@dimen/dp32_w360"
+                android:src="@drawable/info"
+                app:layout_constraintBottom_toTopOf="@id/user_info_iv_logout"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+                android:id="@+id/user_info_tv_app_info_1"
+                style="@style/custom_text_view_medium"
+                android:layout_marginStart="@dimen/dp10_w360"
+                android:text="@string/UserInfo002"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize14"
+                app:layout_constraintBottom_toBottomOf="@id/user_info_iv_app_info"
+                app:layout_constraintLeft_toRightOf="@id/user_info_iv_app_info"
+                app:layout_constraintTop_toTopOf="@id/user_info_iv_app_info" />
+
+        <TextView
+                android:id="@+id/user_info_tv_app_info_2"
+                style="@style/custom_text_view_regular"
+                android:layout_marginEnd="@dimen/dp54_w360"
+                tools:text="@string/UserInfo004"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize14"
+                app:layout_constraintBottom_toBottomOf="@id/user_info_iv_app_info"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/user_info_iv_app_info" />
+        <!--endregion-->
+
+        <!--region 로그아웃-->
+        <ImageView
+                android:id="@+id/user_info_iv_logout"
+                android:layout_width="@dimen/dp24_w360"
+                android:layout_height="@dimen/dp24_w360"
+                android:layout_marginStart="@dimen/dp42_w360"
+                android:layout_marginBottom="@dimen/dp88_w360"
+                android:src="@drawable/top_logout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+                android:id="@+id/user_info_tv_logout"
+                style="@style/custom_text_view_medium"
+                android:layout_width="0dp"
+                android:paddingStart="@dimen/dp76_w360"
+                android:text="@string/UserInfo003"
+                android:textColor="@color/color_525252"
+                android:textSize="@dimen/textSize14"
+                android:onClick="@{() -> activity.onClickMenu(UserInfoIndex.LOGOUT)"
+                app:layout_constraintBottom_toBottomOf="@id/user_info_iv_logout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/user_info_iv_logout" />
+        <!--endregion-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
